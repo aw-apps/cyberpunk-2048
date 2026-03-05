@@ -32,7 +32,8 @@ h1.title {
   font-family: 'Orbitron', sans-serif;
   font-weight: 900;
   color: #00f5ff;
-  text-shadow: 0 0 10px #00f5ff, 0 0 30px #00f5ff;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 10px #00f5ff, 0 0 30px #00f5ff, 0 0 60px rgba(0, 245, 255, 0.4);
 }
 
 /* ── Score boxes ──────────────────────────────────────── */
@@ -41,13 +42,13 @@ h1.title {
   font-family: 'Orbitron', sans-serif;
   background: #12121f;
   border: 1px solid rgba(0, 245, 255, 0.4);
-  color: #00f5ff;
+  color: #ffffff;
   box-shadow: 0 0 8px rgba(0, 245, 255, 0.3);
 }
 
 .score-container:before,
 .best-container:before {
-  color: rgba(0, 245, 255, 0.7);
+  color: rgba(0, 245, 255, 0.85);
 }
 
 /* ── Game container & grid ────────────────────────────── */
@@ -201,13 +202,62 @@ a.keep-playing-button:hover {
 
 /* ── Game message overlay ─────────────────────────────── */
 .game-message {
-  background: rgba(10, 10, 15, 0.85);
-  color: #00f5ff;
+  background: rgba(0, 0, 0, 0.85);
+  border: 1px solid rgba(0, 245, 255, 0.5);
+  box-shadow: 0 0 20px rgba(0, 245, 255, 0.3), inset 0 0 40px rgba(0, 0, 0, 0.5);
   font-family: 'Orbitron', sans-serif;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
 
 .game-message p {
-  text-shadow: 0 0 12px #00f5ff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  /* default (win): neon cyan */
+  color: #00f5ff;
+  text-shadow: 0 0 12px #00f5ff, 0 0 30px rgba(0, 245, 255, 0.6);
+}
+
+.game-message.game-over p {
+  color: #e94560;
+  text-shadow: 0 0 12px #e94560, 0 0 30px rgba(233, 69, 96, 0.6);
+}
+
+.game-message.game-won p {
+  color: #00f5ff;
+  text-shadow: 0 0 12px #00f5ff, 0 0 30px rgba(0, 245, 255, 0.6);
+}
+
+.game-message.game-over {
+  border-color: rgba(233, 69, 96, 0.5);
+  box-shadow: 0 0 20px rgba(233, 69, 96, 0.3), inset 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.game-message .lower a {
+  background: transparent;
+  border: 1px solid #00f5ff;
+  color: #00f5ff;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 6px #00f5ff;
+  box-shadow: 0 0 8px rgba(0, 245, 255, 0.4);
+  transition: box-shadow 0.2s;
+}
+
+.game-message .lower a:hover {
+  box-shadow: 0 0 16px rgba(0, 245, 255, 0.8);
+}
+
+.game-message.game-over .lower a {
+  border-color: #e94560;
+  color: #e94560;
+  text-shadow: 0 0 6px #e94560;
+  box-shadow: 0 0 8px rgba(233, 69, 96, 0.4);
+}
+
+.game-message.game-over .lower a:hover {
+  box-shadow: 0 0 16px rgba(233, 69, 96, 0.8);
 }
 
 /* ── Intro / explanation text ─────────────────────────── */
